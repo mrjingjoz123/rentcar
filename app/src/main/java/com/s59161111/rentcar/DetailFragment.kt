@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.s59161111.rentcar.databinding.FragmentDetailBinding
 
 /**
@@ -20,6 +21,10 @@ class DetailFragment : Fragment() {
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentDetailBinding>(inflater,
             R.layout.fragment_detail,container,false)
+
+        binding.DtBack.setOnClickListener { view : View ->
+            view.findNavController().navigate(R.id.action_rentFragment_to_detailFragment)
+        }
         return binding.root
     }
 

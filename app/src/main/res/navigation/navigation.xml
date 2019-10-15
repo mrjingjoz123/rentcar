@@ -6,31 +6,46 @@
     android:id="@+id/navigation"
     app:startDestination="@id/loginFragment">
     <fragment
-        android:id="@+id/myNavHostFragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:navGraph="@navigation/navigation"
-        app:defaultNavHost="true" />
-    <fragment
         android:id="@+id/loginFragment"
         android:name="com.s59161111.rentcar.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_rentFragment"
+            app:destination="@id/rentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.s59161111.rentcar.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/rentFragment"
         android:name="com.s59161111.rentcar.RentFragment"
         android:label="fragment_rent"
-        tools:layout="@layout/fragment_rent" />
+        tools:layout="@layout/fragment_rent" >
+        <action
+            android:id="@+id/action_rentFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_rentFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.s59161111.rentcar.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_rentFragment"
+            app:destination="@id/rentFragment" />
+    </fragment>
 
 </navigation>

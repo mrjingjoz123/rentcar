@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.s59161111.rentcar.databinding.FragmentLoginBinding
 
 /**
@@ -20,6 +21,13 @@ class LoginFragment : Fragment() {
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentLoginBinding>(inflater,
             R.layout.fragment_login,container,false)
+
+        binding.LoginButton.setOnClickListener { view : View ->
+            view.findNavController().navigate(R.id.action_loginFragment_to_rentFragment)
+        }
+        binding.RegisterButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
         return binding.root
     }
 
