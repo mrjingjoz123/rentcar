@@ -1,4 +1,4 @@
-package com.s59161111.rentcar
+package com.s59161111.rentcar.rent
 
 
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import com.s59161111.rentcar.R
 import com.s59161111.rentcar.databinding.FragmentRentBinding
 
 /**

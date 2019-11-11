@@ -3,7 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".LoginFragment">
+    tools:context=".login.LoginFragment">
+
+
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.s59161111.rentcar.login.LoginViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,7 +24,8 @@
             android:text="Login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Login_Pass" />
+            app:layout_constraintTop_toBottomOf="@+id/Login_Pass"
+            android:onClick="@{ () -> loginViewModel.LoginPress()}"/>
 
         <TextView
             android:id="@+id/textView"
@@ -84,7 +92,9 @@
             android:text="Register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Login_Button" />
+            app:layout_constraintTop_toBottomOf="@+id/Login_Button"
+            android:onClick="@{ () -> loginViewModel.RegisPress()}"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,4 +1,4 @@
-package com.s59161111.rentcar
+package com.s59161111.rentcar.detail
 
 
 import android.os.Bundle
@@ -8,25 +8,27 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import com.s59161111.rentcar.databinding.FragmentRegisterBinding
+import com.s59161111.rentcar.R
+import com.s59161111.rentcar.databinding.FragmentDetailBinding
 
 /**
  * A simple [Fragment] subclass.
  */
-class RegisterFragment : Fragment() {
+class DetailFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<FragmentRegisterBinding>(inflater,
-            R.layout.fragment_register,container,false)
+        val binding = DataBindingUtil.inflate<FragmentDetailBinding>(inflater,
+            R.layout.fragment_detail,container,false)
 
-        binding.ReBack.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        binding.DtBack.setOnClickListener { view : View ->
+            view.findNavController().navigate(R.id.action_detailFragment_to_rentFragment)
         }
         return binding.root
     }
 
 
 }
+

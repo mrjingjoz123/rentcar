@@ -7,7 +7,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.s59161111.rentcar.LoginFragment"
+        android:name="com.s59161111.rentcar.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.s59161111.rentcar.RegisterFragment"
+        android:name="com.s59161111.rentcar.register.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/rentFragment"
-        android:name="com.s59161111.rentcar.RentFragment"
+        android:name="com.s59161111.rentcar.rent.RentFragment"
         android:label="fragment_rent"
         tools:layout="@layout/fragment_rent" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.s59161111.rentcar.DetailFragment"
+        android:name="com.s59161111.rentcar.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
         <action
