@@ -12,6 +12,5 @@ class RegisterViewModelFactory(
         if (modelClass.isAssignableFrom(RegisterViewModel::class.java)) {
             return RegisterViewModel(application) as T
         }
-        throw IllegalArgumentException("Unknown ViewModel class")
-    }
+        throw IllegalArgumentException("Unknown ViewModel class")    }
 }
