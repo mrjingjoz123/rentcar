@@ -14,11 +14,10 @@ import androidx.navigation.fragment.findNavController
 import com.s59161111.rentcar.R
 import com.s59161111.rentcar.databinding.FragmentRentBinding
 
-
 /**
  * A simple [Fragment] subclass.
  */
-public var x = 0;
+     var x = 0;
 
 class RentFragment : Fragment() {
     private lateinit var binding : FragmentRentBinding
@@ -31,6 +30,7 @@ class RentFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_rent,container,false)
 
+
         viewModel = ViewModelProviders.of(this).get(RentViewModel::class.java)
         binding.rentViewModel = viewModel
         binding.lifecycleOwner = this
@@ -39,23 +39,21 @@ class RentFragment : Fragment() {
             if(it){
                 Log.i("RentViewModel","Back")
 
-                this.findNavController().navigate(R.id.action_rentFragment_to_loginFragment)
+                this.findNavController().navigate(R.id.action_rentFragment_to_homeFragment)
             }
         })
 
         viewModel.eventClickPicture1.observe(this, Observer { it ->
             if(it){
                 Log.i("RentViewModel","Picture1")
-                x = 1
-                this.findNavController().navigate(R.id.action_rentFragment_to_detailFragment)
+                this.findNavController().navigate(RentFragmentDirections.actionRentFragmentToDetailFragment(1))
             }
         })
 
         viewModel.eventClickPicture2.observe(this, Observer { it ->
             if(it){
                 Log.i("RentViewModel","Picture2")
-                x = 2
-                this.findNavController().navigate(R.id.action_rentFragment_to_detailFragment)
+                this.findNavController().navigate(RentFragmentDirections.actionRentFragmentToDetailFragment(2))
             }
         })
         return binding.root

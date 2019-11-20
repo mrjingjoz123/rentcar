@@ -8,4 +8,10 @@
     <string name="pass">PASSWORD</string>
     <string name="Login_User" />
     <string name="Login_Pass">Password</string>
+
+
+    <string name="Go_text">GO</string>
+    <string name="AboutMe_text">AboutMe</string>
+
+
 </resources>

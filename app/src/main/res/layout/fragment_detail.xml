@@ -26,7 +26,7 @@
             app:layout_constraintVertical_bias="0.100000024" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imagePicture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -38,14 +38,14 @@
 
         <TextView
             android:id="@+id/textView19"
-            android:layout_width="229dp"
-            android:layout_height="123dp"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
             android:layout_marginTop="32dp"
-            android:text="Detail : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+            android:text="@{detailViewModel.detail}"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imagePicture"
 
             />
 
@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="STATUS : XXXX"
+            android:text="INPUT YOUR NAME"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView19" />
@@ -64,10 +64,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="PRICE : XXXX"
+            android:text="@{detailViewModel.price}"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+            app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
 
         <Button
             android:id="@+id/Dt_Back"
@@ -76,14 +77,14 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="@{ () -> detailViewModel.BackPress()}"
             android:text="BACK"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/Dt_Save"
             app:layout_constraintTop_toBottomOf="@+id/textView21"
-            app:layout_constraintVertical_bias="0.082"
-            android:onClick="@{ () -> detailViewModel.BackPress()}"
-            />
+            app:layout_constraintVertical_bias="0.082" />
 
         <Button
             android:id="@+id/Dt_Save"
@@ -92,12 +93,31 @@
             android:layout_marginStart="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
             android:text="SAVE"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/Dt_Back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView21"
-            app:layout_constraintVertical_bias="0.07999998" />
+            app:layout_constraintVertical_bias="0.07999998"
+            android:onClick="@{ () -> detailViewModel.checkInput()}"
+            />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText"
+            android:layout_width="246dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView20"
+            android:text=""
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
