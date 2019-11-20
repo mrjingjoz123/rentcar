@@ -12,6 +12,16 @@
     <string name="rent_text">RENT A CAR</string>
     <string name="Go_text">GO</string>
     <string name="AboutMe_text">AboutMe</string>
+    <string name="Back_text">BACK</string>
+    <string name="Name_text">NAME : PUVIS TEEWEANG</string>
+    <string name="Email_text">EMAIL: 59161111@gmail.com</string>
+    <string name="Phone_text">EPHONE: 0927041174</string>
 
+    <string name="Detail_text">DETAIL</string>
+    <string name="Input_text">INPUT YOUR NAME</string>
+    <string name="Save_text">SAVE</string>
+
+    <string name="Num1_text">1</string>
+    <string name="Num2_text">2</string>
 
 </resources>

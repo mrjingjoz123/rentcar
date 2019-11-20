@@ -17,7 +17,7 @@
             android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DETAIL"
+            android:text="@string/Detail_text"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +34,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView17"
             android:src="@drawable/bike1"
-            />
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/textView19"
@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="INPUT YOUR NAME"
+            android:text="@string/Input_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView19" />
@@ -79,7 +79,7 @@
             android:layout_marginRight="32dp"
             android:layout_marginBottom="8dp"
             android:onClick="@{ () -> detailViewModel.BackPress()}"
-            android:text="BACK"
+            android:text="@string/Back_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/Dt_Save"
@@ -94,16 +94,15 @@
             android:layout_marginLeft="32dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
-            android:text="SAVE"
+            android:onClick="@{ () -> detailViewModel.checkInput()}"
+            android:text="@string/Save_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/Dt_Back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView21"
-            app:layout_constraintVertical_bias="0.07999998"
-            android:onClick="@{ () -> detailViewModel.checkInput()}"
-            />
+            app:layout_constraintVertical_bias="0.07999998" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:id="@+id/textInputEditText"
             android:layout_width="246dp"
             android:layout_height="wrap_content"

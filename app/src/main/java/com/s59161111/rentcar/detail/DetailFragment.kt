@@ -74,7 +74,12 @@ class DetailFragment : Fragment() {
 
         viewModel.eventCheckInput.observe(this, Observer { it ->
             if(it){
-                viewModel.ClickPress(binding.textInputEditText.toString())
+                var textInput = binding.textInputEditText.text.toString()
+                Log.i("Test","${textInput} + 3")
+
+                    viewModel.ClickPress(textInput)
+
+
             }
         })
 

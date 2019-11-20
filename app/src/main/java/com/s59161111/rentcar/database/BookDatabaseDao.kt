@@ -23,6 +23,9 @@ interface BookDatabaseDao  {
     @Query("DELETE FROM data_book_table")
     fun clear()
 
+    @Query("SELECT * FROM data_book_table ORDER BY bookId DESC LIMIT 1")
+    fun getToStarted(): Book?
+
     @Query("SELECT * FROM data_book_table ORDER BY bookId DESC")
     fun getAll(): LiveData<List<Book>>
 

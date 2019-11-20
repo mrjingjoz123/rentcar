@@ -73,21 +73,22 @@ class DetailViewModel(val database: BookDatabaseDao, application: Application) :
     }
 
     fun  ClickPress(name:String){
+        uiScope.launch {
         Log.i("DetailViewModel","${name}")
         if(name != "" || name != null){
-            uiScope.launch {
+
                 var bookingData = Book(
                     name = name,
                     bike = Bicycle.toString()
                 )
                 insert(bookingData)
-
-                Log.i("DetailViewModel","${bookingData}")
+                Log.i("DetailViewModel","${getToBookFromDatabase()}")
                 _eventClickSave.value = true
-            }
+
         }else{
             _popUp.value = true
         }
+    }
     }
 
     fun checkInput(){
@@ -102,5 +103,21 @@ class DetailViewModel(val database: BookDatabaseDao, application: Application) :
             database.insert(data)
         }
     }
+
+
+    private suspend fun getToBookFromDatabase(): Book? {
+        return withContext(Dispatchers.IO) {
+            var started = database.getToStarted()
+            started
+        }
+
+
+    }
+
+
+
+
+
+
 
 }
